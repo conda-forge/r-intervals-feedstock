@@ -1,4 +1,4 @@
-{% set version = '0.15.2' %}
+{% set version = "0.15.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/intervals_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/intervals/intervals_{{ version }}.tar.gz
-  sha256: 0bd23b0ce817ddd851238233d8a5420bf3a6d29e75fd361418cbc50118777c57
+  sha256: 8501fef7c74b9be874e807839518aae85e79bf4a047cd52169b52c6d9b41dfc4
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -47,7 +47,7 @@ about:
   summary: Tools for working with and comparing sets of points and intervals.
   license_family: OTHER
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0
 
 extra:
   recipe-maintainers:
