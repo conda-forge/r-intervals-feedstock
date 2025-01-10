@@ -12,7 +12,7 @@ source:
   sha256: 11907be2c47ee4f6359055113dc0dab9ba2c35fbc743c2d52fd1ba1006c7ce5c
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,6 +30,7 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -44,7 +45,6 @@ about:
   home: http://github.com/edzer/intervals
   license: Artistic-2.0
   summary: Tools for working with and comparing sets of points and intervals.
-  license_family: OTHER
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0
 
